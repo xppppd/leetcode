@@ -8,16 +8,26 @@ class Solution:
         :type nums: List[int]
         :rtype: int
         """
-        count = len(nums)
-        for i in range(1, len(nums) + 1):
-            if nums[-i] in nums[:-i]:
-                nums.append(nums.pop(-i))
-                count -= 1
-                print(nums)
-        return nums[:count]
+        # 太慢了
+        # for i in range(1, len(nums) + 1):
+        #     if nums[-i] in nums[:-i]:
+        #         nums.append(nums.pop(-i))
+        #         count -= 1
+        # return nums[:count]
+        length = len(nums)
+        i = 0
+        j = 1
+        while j < length:
+            if nums[i] == nums[j]:
+                j += 1
+            else:
+                nums[i + 1] = nums[j]
+                j += 1
+                i += 1
+        return nums[0:i+1]
 
 
 if __name__ == '__main__':
     s = Solution()
-    l = [1, 2, 3, 3, 4, 5, 5, 7, 3, 3, 3, 2, 8, 5, 4, 7]
+    l = [1,1,2]
     print(s.removeDuplicates(l))
