@@ -94,7 +94,7 @@ def twoSum(sums: list, k):
 
 
 if __name__ == '__main__':
-    nums = [-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6]
+    nums = [-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6]
     s = Solution()
     l = s.threeSum(nums)
     print(l)
