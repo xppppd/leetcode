@@ -48,6 +48,7 @@ class Solution:
                     return False
         return True
 
+
 # 范例
 class Solution__:
     def isValid(self, s):
@@ -63,3 +64,47 @@ class Solution__:
             else:
                 l.append(i)
         return len(l) == 1
+
+#
+# class Solution1:
+#     def scoreOfParentheses(self, S):
+#         """
+#         :type S: str
+#         :rtype: int
+#         """
+#         print(S)
+#         if len(S) > 2:
+#             if S[1] == '(' and S[-2] == ')':
+#                 return 2 * self.scoreOfParentheses(S[1:-1])
+#             elif S[1] == '(' and S[-2] == '(':
+#                 return 1 + self.scoreOfParentheses(S[:-2])
+#             elif S[1] == ')' and S[-2] == ')':
+#                 return 1 + self.scoreOfParentheses(S[2:])
+#             elif S[1] == ')' and S[-2] == '(':
+#                 return 2 + self.scoreOfParentheses(S[2:-2])
+#         else:
+#             if len(S) == 2:
+#                 return 1
+#             else:
+#                 return 0
+#
+#         def isValid(self, s):
+#             """
+#             :type s: str
+#             :rtype: bool
+#             """
+#             a = {')': '(', ']': '[', '}': '{'}
+#             l = [None]
+#             for i in s:
+#                 if i in a and a[i] == l[-1]:
+#                     l.pop()
+#                 else:
+#                     l.append(i)
+#             return len(l) == 1
+#
+#
+# if __name__ == '__main__':
+#     s = Solution1()
+#     S = '((()()))(()())'
+#     r = s.scoreOfParentheses(S)
+#     print(r)
